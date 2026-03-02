@@ -19,6 +19,10 @@
             </div>
         </div>
     </section>
+    <div class="copyright">
+        <p>Copyright © 2026 Xiaoxuan</p>
+    </div>
+
 </template>
 
 <script setup>
@@ -51,14 +55,15 @@ onMounted(() => {
 
 <style scoped>
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .news {
@@ -178,4 +183,15 @@ onMounted(() => {
     line-height: 1.8;
 }
 
+.copyright {
+    background-color: #747474;
+    color: #e2e2e2;
+    font-size: 14px;
+    letter-spacing: 1px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 </style>
