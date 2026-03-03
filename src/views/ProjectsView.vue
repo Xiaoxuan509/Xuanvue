@@ -18,16 +18,7 @@
 </template>
 
 <style scoped>
-:root {
-  --primary-dark: #1b2a2f;
-  --accent-blue: #38bdf8;
-  --bg-light: #dadada;
-  --text-main: #303030;
-  --text-light: #EFE6D8;
-  --nav-text: #E2E8F0;
-  --hover-bg: rgba(204, 196, 174, 0.1);
-  --shadow-color: rgba(0, 0, 0, 0.6);
-}
+
 
 .news {
     background-image: url(../assets/ProjectBg.jpg);

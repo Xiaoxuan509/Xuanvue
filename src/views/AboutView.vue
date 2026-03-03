@@ -67,7 +67,7 @@ onMounted(() => {
 }
 
 .news {
-    background-image: url(@/assets/Aboutpage.jpg);
+    background-image: url(@/assets/552st.jpg);
     background-size: cover;
     background-position: center;
     display: flex;

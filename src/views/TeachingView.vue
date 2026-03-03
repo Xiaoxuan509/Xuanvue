@@ -5,11 +5,11 @@
 
     <div class="project">
         <div>
-            <a href="Arduino.html"><img src="../assets/arduino.png" alt="●線上計算機"></a>
+            <a href="Arduino.html"><img src="../assets/arduino.png" alt="Arduino教學機"></a>
             <blockquote><strong>●Arduino教學</strong></blockquote>
         </div>
         <div>
-            <img src="../assets/esp32.png" alt="●分壓計算機">
+            <img src="../assets/esp32.png" alt="ESP32教學">
             <blockquote><strong>●ESP32教學</strong></blockquote>
             <p><strong>製作中...</strong></p>
         </div>
@@ -61,7 +61,7 @@
     text-align: center;
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 6px 20px var(--card-shadow);
+    box-shadow: 0 6px 20px var(--shadow-color);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
