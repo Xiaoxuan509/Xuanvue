@@ -5,8 +5,10 @@
 
     <div class="project">
         <div>
-            <a href="Arduino.html"><img src="../assets/arduino.png" alt="Arduino教學機"></a>
-            <blockquote><strong>●Arduino教學</strong></blockquote>
+            <router-link to='/Arduino'><img src="../assets/arduino.png" alt="Arduino教學">
+                <blockquote><strong>●Arduino教學</strong></blockquote>
+            </router-link>
+
         </div>
         <div>
             <img src="../assets/esp32.png" alt="ESP32教學">
@@ -78,5 +80,16 @@
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s;
     cursor: pointer;
+}
+
+.project a {
+    text-decoration: none; /* 移除底線 */
+    color: inherit;        /* 繼承父元素的顏色，避免變成藍色 */
+    display: block;        /* 讓點擊範圍包含整個區塊 */
+}
+
+/* 如果你希望滑鼠移上去時也不要出現底線 */
+.project a:hover {
+    text-decoration: none;
 }
 </style>

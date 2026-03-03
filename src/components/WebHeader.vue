@@ -27,22 +27,22 @@ const toggleMenu = () => {
 <template>
   <header>
     <h1><router-link to="/">Xuan的網站</router-link></h1>
-    
-    <ul :class="{ 'show': isMenuOpen }">
-      <li v-for="item in navitems" :key="item.name">
-        <router-link :to="item.to">{{ item.name }}</router-link>
-      </li>
-    </ul>
+    <nav>
+      <ul :class="{ 'show': isMenuOpen }">
+        <li v-for="item in navitems" :key="item.name">
+          <router-link :to="item.to">{{ item.name }}</router-link>
+        </li>
+      </ul>
+    </nav>
+
 
     <button class="menu-toggle" @click="toggleMenu" aria-label="切換選單">☰</button>
-    
+
     <div v-if="isMenuOpen" class="overlay" @click="isMenuOpen = false"></div>
   </header>
 </template>
 
 <style>
-
-
 * {
   padding: 0;
   margin: 0;
@@ -85,14 +85,14 @@ header h1 a {
   text-decoration: none;
 }
 
-header ul {
+header nav ul {
   list-style: none;
   display: flex;
   gap: 3vw;
   line-height: 55px;
 }
 
-header ul li a {
+header nav ul li a {
   color: var(--nav-text);
   text-decoration: none;
   font-weight: 600;
@@ -102,13 +102,13 @@ header ul li a {
   transition: all 0.3s ease;
 }
 
-header ul li a:hover {
+header nav ul li a:hover {
   color: var(--text-light);
   background-color: var(--hover-bg);
   transform: scale(1.1);
 }
 
-ul {
+nav ul {
   list-style: none;
   display: flex;
   gap: 3vw;
@@ -119,11 +119,11 @@ ul {
   transition: right 0.3s ease;
 }
 
-li {
+nav li {
   display: inline;
 }
 
-li a {
+nav li a {
   color: var(--nav-text);
   text-decoration: none;
   font-weight: 600;
@@ -133,7 +133,7 @@ li a {
   transition: all 0.3s ease;
 }
 
-li a:hover {
+nav li a:hover {
   color: var(--text-light);
   background-color: var(--hover-bg);
   transform: scale(1.1);
@@ -169,7 +169,7 @@ li a:hover {
   z-index: 3500;
 }
 
-ul.show {
+nav ul.show {
   right: 0 !important;
 }
 
@@ -185,7 +185,7 @@ ul.show {
     font-size: 50px;
   }
 
-  ul {
+  nav ul {
     flex-direction: column;
     position: fixed;
     top: 0;
@@ -201,7 +201,7 @@ ul.show {
     z-index: 4000;
   }
 
-  ul li a {
+  nav ul li a {
     color: #ffffff;
     font-size: 18px;
   }

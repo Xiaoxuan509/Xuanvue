@@ -3,12 +3,14 @@ import Home from '../views/HomeView.vue'
 import About from '../views/AboutView.vue'
 import Project from '../views/ProjectsView.vue'
 import Teach from '../views/TeachingView.vue'
+import Arduino from '../views/ArduinoTeach.vue'
 
 const routes = [
   { path: '/', component: Home },
   { path: '/about', component: About },
   { path: '/project', component: Project },
-  { path: '/teach', component: Teach }
+  { path: '/teach', component: Teach },
+  { path: '/Arduino', component: Arduino }
 ]
 
 const router = createRouter({

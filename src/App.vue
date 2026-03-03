@@ -29,6 +29,12 @@ import WebHeader from './components/WebHeader.vue'
   --nav-text: #E2E8F0;
   --timeline-card: rgba(255, 255, 255, 0.7);
   --shadow-dark: rgba(0, 0, 0, 0.5);
+  --shadow-dark: rgba(0, 0, 0, 0.6);
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --code-text: #abb2bf;
+  --sidebar-bg: #1e293b;
+  --sidebar-link: #cbd5f5;
+  --arduino-bg: #282c34;     /* 深色背景 */
 }
 body {
   margin: 0;
