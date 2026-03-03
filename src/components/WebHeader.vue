@@ -1,21 +1,42 @@
 <script setup>
+import { ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+// 1. 定義一個變數來控制開關狀態
+const isMenuOpen = ref(false)
+
 const navitems = [
   { name: "首頁", to: "/" },
-  { name: "關於我", to: "/About" },
-  { name: "作品", to: "/Project" },
+  { name: "關於我", to: "/about" },
+  { name: "作品", to: "/project" },
   { name: "教學", to: "/teach" },
 ]
 
+// 2. 監聽路由，換頁時自動關閉選單
+watch(() => route.path, () => {
+  isMenuOpen.value = false
+})
+
+// 3. 切換開關的函式
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value
+}
 </script>
 
 <template>
   <header>
     <h1><router-link to="/">Xuan的網站</router-link></h1>
-    <ul>
+    
+    <ul :class="{ 'show': isMenuOpen }">
       <li v-for="item in navitems" :key="item.name">
         <router-link :to="item.to">{{ item.name }}</router-link>
       </li>
     </ul>
+
+    <button class="menu-toggle" @click="toggleMenu" aria-label="切換選單">☰</button>
+    
+    <div v-if="isMenuOpen" class="overlay" @click="isMenuOpen = false"></div>
   </header>
 </template>
 
@@ -32,6 +53,7 @@ const navitems = [
   --hover-bg: rgba(204, 196, 174, 0.1);
   --nav-text: #E2E8F0;
   --timeline-card: rgba(255, 255, 255, 0.7);
+  --shadow-dark: rgba(0, 0, 0, 0.5);
 }
 
 * {
@@ -44,7 +66,6 @@ html,
 body {
   overflow-x: hidden;
   font-family: 'Microsoft JhengHei', sans-serif;
-  scroll-behavior: smooth;
   background-color: var(--bg-light);
   color: var(--text-light);
 }
@@ -131,5 +152,75 @@ li a:hover {
   transform: scale(1.1);
 }
 
-</style>
+.menu-toggle {
+  display: none;
+  position: absolute;
+  right: 6vw;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 3000;
+  user-select: none;
+  transition: color 0.3s ease;
+}
 
+.menu-toggle:hover {
+  color: #ffcc70;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 3500;
+}
+
+ul.show {
+  right: 0 !important;
+}
+
+
+@media screen and (max-width: 768px) {
+  header h1 {
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: 55px;
+  }
+
+  .news h2 {
+    font-size: 50px;
+  }
+
+  ul {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 200px;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 80px 30px;
+    box-shadow: -6px 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px 0 0 20px;
+    transition: right 0.3s ease;
+    z-index: 4000;
+  }
+
+  ul li a {
+    color: #ffffff;
+    font-size: 18px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+</style>
