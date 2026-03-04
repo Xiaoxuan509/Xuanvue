@@ -6,16 +6,34 @@
         <h2>自我介紹</h2>
         <div class="timeline">
             <div class="timeline-item left">
-                <h3>專長</h3>
-                <p>打字速度快，轉魔術方塊，攝影，打保齡球。</p>
+                <div class="icon">🏆</div>
+                <h3>技術選手身份</h3>
+                <p>目前致力於<strong>"技能競賽"</strong>領域，透過訓練技術，在壓力下保持精準、在複雜邏輯中尋找優解，目標是以技術實力站上國際舞台，為國爭光。</p>
             </div>
             <div class="timeline-item right">
-                <h3>技能</h3>
-                <p>編寫 Python、C++、C# 程式語言、電路板焊接、設計電路、網站設計，使用C#設計應用程式幫助事業，曾使用Esp32、WiFiBoy、Arduino應用在真實生活中，現在也是選手身分。</p>
+                <div class="icon">⚡</div>
+                <h3>硬體開發與焊接</h3>
+                <p>具備的<strong>"電路板焊接與設計"</strong>經驗。曾將 <strong>"ESP32"</strong>、<strong>"WiFiBoy"</strong> 及
+                    <strong>"Arduino"</strong> 整合應用於真實生活場景，實現從無到有的硬體開發，解決實際環境中的自動化需求。
+                </p>
             </div>
             <div class="timeline-item left">
-                <h3>未來目標</h3>
-                <p>參加技能競賽，獲得榮譽為國爭光。</p>
+                <div class="icon">💻</div>
+                <h3>全棧開發思維</h3>
+                <p>擅長使用 <strong>"C++"</strong>、<strong>"Python"</strong>、<strong>"C#"</strong>。能運用 C#
+                    設計專用的應用程式來協助事業與流程優化，實現「軟硬整合」的最高價值。</p>
+            </div>
+            <div class="timeline-item right">
+                <div class="icon">⌨️</div>
+                <h3>極速打字</h3>
+                <p>高於常人的打字速度，能更流暢紀錄靈感，讓代碼產出與思考同步。</p>
+            </div>
+            <div class="timeline-item left">
+                <div class="icon">🎨</div>
+                <h3>PCB Layout 與電路佈局</h3>
+                <p>
+                    將雜亂的電路轉化為專業的電路。熟悉從<strong>"原理圖繪製 (Schematic)"</strong> 到 <strong>"多層板佈局 (PCB Layout)"</strong> 的完整流程。
+                </p>
             </div>
         </div>
     </section>
