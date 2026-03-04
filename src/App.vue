@@ -13,7 +13,7 @@ import WebHeader from './components/WebHeader.vue'
 <style>
 :root {
   --primary-dark: #1b2a2f;
-  --accent-blue: #38bdf8;
+  --accent-blue: #3865f8;
   --bg-light: #dadada;
   --text-main: #303030;
   --text-light: #EFE6D8;

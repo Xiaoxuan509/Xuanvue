@@ -201,6 +201,10 @@ onMounted(() => {
     line-height: 1.8;
 }
 
+.icon {
+    font-size: 30px;
+}
+
 .copyright {
     background-color: #747474;
     color: #e2e2e2;
@@ -211,5 +215,42 @@ onMounted(() => {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+    .timeline::before {
+        left: 30px;
+    }
+
+    .timeline-item {
+        width: calc(100% - 60px);
+        left: 60px !important;
+        text-align: left !important;
+        margin-bottom: 40px;
+        padding: 20px;
+    }
+
+    .timeline-item.left::before,
+    .timeline-item.right::before {
+        left: -40px;
+        right: auto;
+    }
+
+    .news h2 {
+        font-size: 40px;
+    }
+    
+    .aboutme h2 {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    .timeline-item h3 {
+        font-size: 22px;
+    }
+
+    .icon {
+    font-size: 20px;
+}
 }
 </style>
