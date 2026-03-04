@@ -92,4 +92,16 @@
 .project a:hover {
     text-decoration: none;
 }
+
+.copyright {
+  background-color: #747474;
+  color: #e2e2e2;
+  font-size: 14px;
+  letter-spacing: 1px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 </style>

@@ -77,7 +77,190 @@ void loop() {
 
                 </div>
             </section>
+
+            <section id="for">
+                <h2>for迴圈</h2>
+
+                <p>在Arduino語法中，若要執行超過兩次的重複動作，就可以用for迴圈來撰寫，先設定初始變數 i 當作迴圈變數，下一段指定迴圈的範圍，最後一段指令迴圈的動作是要加還是減</p>
+                <img src="../assets/fordefine.png" alt="for">
+                <p><strong>● for迴圈範例： (使用<a href="https://www.tinkercad.com/" target="_blank"
+                            style="text-decoration: none;">Tinkercad</a>模擬軟體)</strong></p>
+                <img src="../assets/forled.png" alt="">
+                <div class="code-block">
+                    <button class="copy-btn" @click="copyCode">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-copy" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+                        </svg>
+                    </button>
+                    <pre class="code-scroll">
+                            <code class="language-cpp">
+// 定義 LED 使用的 12 個腳位（用陣列管理）
+const int pins[] = { 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 };  
+
+void setup() {
+  // 使用 for 迴圈，將所有 LED 腳位設為輸出
+  for (int i = 0; i &lt; 12; i++) pinMode(pins[i], OUTPUT); 
+}
+
+void loop() {
+  for (int i = 0; i &lt; 12; i++) {     // LED 由左到右依序亮起
+    digitalWrite(pins[i], 1);     // 第 i 顆 LED 亮
+    delay(100);  
+  }
+
+  for (int i = 0; i &lt; 12; i++) {    // LED 由左到右依序熄滅
+    digitalWrite(pins[i], 0);       // 第 i 顆 LED 滅
+    delay(100);
+  }
+
+  for (int i = 11; i >= 0; i--) {   // LED 由右到左依序亮起
+    digitalWrite(pins[i], 1);       // 第 i 顆 LED 亮
+    delay(100);
+  }
+
+  for (int i = 11; i >= 0; i--) {   // LED 由右到左依序熄滅
+    digitalWrite(pins[i], 0);       // 第 i 顆 LED 滅
+    delay(100);
+  }
+
+  for (int j = 0; j &lt; 3; j++) {     // 整組奇偶閃爍重複 3 次
+    for (int i = 0; i &lt; 12; i += 2) 
+        digitalWrite(pins[i], 1);   // 偶數索引 LED（0,2,4...）亮
+    for (int i = 1; i &lt; 12; i += 2) 
+        digitalWrite(pins[i], 0);   // 奇數索引 LED（1,3,5...）滅
+    delay(200);
+
+    for (int i = 0; i &lt; 12; i += 2) 
+        digitalWrite(pins[i], 0);   // 偶數索引 LED 滅
+    for (int i = 1; i &lt; 12; i += 2) 
+        digitalWrite(pins[i], 1);   // 奇數索引 LED 亮
+    delay(200);
+  }
+
+  for (int i = 0; i &lt; 12; i++) digitalWrite(pins[i], LOW);  // LED 最後都熄滅
+}
+
+                            </code>
+                        </pre>
+                </div>
+                <p><strong>● for迴圈如果需要執行一行程式碼，則不需要大括號，一行以上則需要，if也是同觀念</strong></p>
+            </section>
+
+            <section id="if">
+                    <h2>if判斷式</h2>
+                    <p>if判斷式用來根據條件執行不同的程式碼區塊，基本語法如下：</p>
+                    <img src="../assets/if.png" alt="">
+
+                    <p><strong>● if 判斷按鈕實作： (使用<a href="https://www.tinkercad.com/" target="_blank"
+                                style="text-decoration: none;">Tinkercad</a>模擬軟體)</strong></p>
+                    <img src="../assets/ifarduino.png" alt="">
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-copy" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+                            </svg>
+                        </button>
+                        <pre class="code-scroll">
+<code class="language-cpp">
+#define Red 7     // 定義紅燈接在第 7 腳
+#define Blue 5    // 定義藍燈接在第 5 腳
+#define Green 4   // 定義綠燈接在第 4 腳
+
+#define ButtonPin1 12   // 定義按鈕1接在第 12 腳
+#define ButtonPin2 9    // 定義按鈕1接在第 9 腳
+
+void setup() {
+  pinMode(Red, OUTPUT);
+  pinMode(Blue, OUTPUT);
+  pinMode(Green, OUTPUT);
+
+  // 使用內建上拉電阻，按鈕未按下時為 1，按下時為 0
+  pinMode(ButtonPin1, INPUT_PULLUP);
+  pinMode(ButtonPin2, INPUT_PULLUP);
+}
+
+void loop() {
+  // 讀取按鈕狀態 (0 代表按下)
+  int btn1 = digitalRead(ButtonPin1);
+  int btn2 = digitalRead(ButtonPin2);
+
+  // !btn => btn == 0
+  if (!btn1) LED_Control(2);      // 當按鈕 1 被按下，切換到模式 2 (亮藍燈)
+  else if (!btn2) LED_Control(3); // 按鈕 1 沒按，按鈕 2 按下，切換到模式 3(亮綠燈)
+  else LED_Control(1);                // 兩個都沒按時，維持模式 1 (亮紅燈)
+}
+
+// 燈號控制函式：根據傳入的數字切換燈號
+void LED_Control(int number) {
+  // 邏輯判斷：若 number 等於對應數字，則該腳位輸出 HIGH (1)
+  digitalWrite(Red, number == 1);
+  digitalWrite(Blue, number == 2);
+  digitalWrite(Green, number == 3);
+}
+</code>
+                        </pre>
+                    </div>
+                </section>
+
+                <section id="traffic-light">
+                    <h2>紅綠燈實作</h2>
+                    <p>利用紅、黃、綠三顆 LED，模擬馬路上的紅綠燈切換邏輯，<strong>紅燈亮5秒，綠燈亮3秒，黃燈亮2秒。</strong></p>
+                    <p><strong>所需材料：</strong> 紅/黃/綠 LED、220Ω 電阻 x3、麵包板。(電路接法如下圖)</p>
+
+                    <img src="../assets/arduino rgy.png" alt="">
+
+
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-copy" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+                            </svg>
+                        </button>
+                        <pre class="code-scroll">
+<code class="language-cpp">
+#define traffic_light_Red 2     // 定義紅燈接在 Arduino 腳位 2
+#define traffic_light_Yellow 3  // 定義黃燈接在 Arduino 腳位 3
+#define traffic_light_Green 4   // 定義綠燈接在 Arduino 腳位 4
+
+void setup() {
+  // 使用 for 迴圈，將 2~4 腳位設為輸出（紅黃綠燈）
+  for (int i = 2; i &lt;= 4; i++) pinMode(i, OUTPUT);
+}
+
+void loop() {
+  traffic_light_Control(1); // 呼叫函式，顯示紅燈
+  delay(5000);
+  traffic_light_Control(3); // 呼叫函式，顯示綠燈
+  delay(3000);
+  traffic_light_Control(2); // 呼叫函式，顯示黃燈
+  delay(2000);
+}
+
+// 副程式寫法
+void traffic_light_Control(int number) {
+  // 當 number 為 1 時紅燈亮，其餘時間熄滅
+  digitalWrite(traffic_light_Red, number == 1);     
+
+  // 當 number 為 2 時黃燈亮，其餘時間熄滅
+  digitalWrite(traffic_light_Yellow, number == 2);
+
+  // 當 number 為 3 時綠燈亮，其餘時間熄滅
+  digitalWrite(traffic_light_Green, number == 3);
+}</code>
+                    </pre>
+                    </div>
+                </section>
         </main>
+    </div>
+
+    <div class="copyright">
+        <p>Copyright © 2026 Xiaoxuan</p>
     </div>
 
 </template>
@@ -302,5 +485,17 @@ void loop() {
 /* 字串 */
 :deep(.hljs-string) {
     color: #98c379;
+}
+
+.copyright {
+  background-color: #747474;
+  color: #e2e2e2;
+  font-size: 14px;
+  letter-spacing: 1px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 </style>
