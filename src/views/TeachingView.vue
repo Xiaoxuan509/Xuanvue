@@ -15,6 +15,16 @@
             <blockquote><strong>●ESP32教學</strong></blockquote>
             <p><strong>製作中...</strong></p>
         </div>
+        <div>
+            <img src="../assets/TeachC.png" alt="電腦軟體設計教學">
+            <blockquote><strong>●電腦軟體設計教學</strong></blockquote>
+            <p><strong>製作中...</strong></p>
+        </div>
+        <div>
+            <img src="../assets/python.jpg" alt="Python教學">
+            <blockquote><strong>●Python教學</strong></blockquote>
+            <p><strong>製作中...</strong></p>
+        </div>
     </div>
 
     <div class="copyright">
@@ -74,18 +84,19 @@
 
 .project img {
     width: 100%;
-    height: auto;
+    height: 200px;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s;
     cursor: pointer;
+    
 }
 
 .project a {
-    text-decoration: none; /* 移除底線 */
-    color: inherit;        /* 繼承父元素的顏色，避免變成藍色 */
-    display: block;        /* 讓點擊範圍包含整個區塊 */
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 /* 如果你希望滑鼠移上去時也不要出現底線 */
