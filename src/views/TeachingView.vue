@@ -1,29 +1,24 @@
+<script setup>
+const tutorial = [
+    { route: "/Arduino", img: require('@/assets/arduino.png'), text: "●Arduino教學", isBuild: false },
+    { route: "/Esp32", img: require('@/assets/esp32.png'), text: "●ESP32教學", isBuild: true },
+    { route: "/Python", img: require('@/assets/python.jpg'), text: "●Python教學", isBuild: true },
+    { route: "/Forms", img: require('@/assets/TeachC.png'), text: "●電腦軟體設計教學", isBuild: true },
+]
+</script>
+
 <template>
     <div class="news">
         <h2>教學</h2>
     </div>
 
     <div class="project">
-        <div>
-            <router-link to='/Arduino'><img src="../assets/arduino.png" alt="Arduino教學">
-                <blockquote><strong>●Arduino教學</strong></blockquote>
+        <div v-for="t in tutorial" :key="t.img">
+            <router-link :to="t.isBuild ? '#': t.route">
+                <img :src="t.img" alt="images">
+                <blockquote><strong>{{ t.text }}</strong></blockquote>
+                <p v-if = "t.isBuild"><strong>製作中...</strong></p>
             </router-link>
-
-        </div>
-        <div>
-            <img src="../assets/esp32.png" alt="ESP32教學">
-            <blockquote><strong>●ESP32教學</strong></blockquote>
-            <p><strong>製作中...</strong></p>
-        </div>
-        <div>
-            <img src="../assets/TeachC.png" alt="電腦軟體設計教學">
-            <blockquote><strong>●電腦軟體設計教學</strong></blockquote>
-            <p><strong>製作中...</strong></p>
-        </div>
-        <div>
-            <img src="../assets/python.jpg" alt="Python教學">
-            <blockquote><strong>●Python教學</strong></blockquote>
-            <p><strong>製作中...</strong></p>
         </div>
     </div>
 
@@ -64,6 +59,10 @@
     color: var(--text-main);
 }
 
+.project p {
+    color: rgb(145, 2, 2);
+}
+
 .project blockquote {
     font-size: 25px;
 }
@@ -90,7 +89,7 @@
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s;
     cursor: pointer;
-    
+
 }
 
 .project a {
@@ -105,18 +104,18 @@
 }
 
 .copyright {
-  background-color: #747474;
-  color: #e2e2e2;
-  font-size: 14px;
-  letter-spacing: 1px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+    background-color: #747474;
+    color: #e2e2e2;
+    font-size: 14px;
+    letter-spacing: 1px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
     .news h2 {
         font-size: 40px;
     }

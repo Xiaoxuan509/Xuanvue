@@ -1,3 +1,32 @@
+<script setup>
+import { onMounted, onUnmounted } from 'vue';
+
+onMounted(() => {
+    // 使用 Intersection Observer 取代 scroll 監聽，效能更好
+    const observerOptions = {
+        threshold: 0.1 // 只要元素出現 10% 就觸發
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    }, observerOptions);
+
+    // 開始觀察所有的 timeline-item
+    const items = document.querySelectorAll(".timeline-item");
+    items.forEach(item => observer.observe(item));
+
+    // 組件卸載時停止觀察
+    onUnmounted(() => {
+        observer.disconnect();
+    });
+});
+
+</script>
+
 <template>
     <section class="news">
         <h2>關於我</h2>
@@ -32,7 +61,8 @@
                 <div class="icon">🎨</div>
                 <h3>PCB Layout 與電路佈局</h3>
                 <p>
-                    將雜亂的電路轉化為專業的電路。熟悉從<strong>"原理圖繪製 (Schematic)"</strong> 到 <strong>"多層板佈局 (PCB Layout)"</strong> 的完整流程。
+                    將雜亂的電路轉化為專業的電路。熟悉從<strong>"原理圖繪製 (Schematic)"</strong> 到 <strong>"多層板佈局 (PCB Layout)"</strong>
+                    的完整流程。
                 </p>
             </div>
         </div>
@@ -43,33 +73,7 @@
 
 </template>
 
-<script setup>
-import { onMounted, onUnmounted } from 'vue';
 
-onMounted(() => {
-    // 使用 Intersection Observer 取代 scroll 監聽，效能更好
-    const observerOptions = {
-        threshold: 0.1 // 只要元素出現 10% 就觸發
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-            }
-        });
-    }, observerOptions);
-
-    // 開始觀察所有的 timeline-item
-    const items = document.querySelectorAll(".timeline-item");
-    items.forEach(item => observer.observe(item));
-
-    // 組件卸載時停止觀察
-    onUnmounted(() => {
-        observer.disconnect();
-    });
-});
-</script>
 
 <style scoped>
 @keyframes fadeUp {
@@ -239,7 +243,7 @@ onMounted(() => {
     .news h2 {
         font-size: 40px;
     }
-    
+
     .aboutme h2 {
         font-size: 32px;
         margin-bottom: 40px;
@@ -250,7 +254,7 @@ onMounted(() => {
     }
 
     .icon {
-    font-size: 20px;
-}
+        font-size: 20px;
+    }
 }
 </style>
