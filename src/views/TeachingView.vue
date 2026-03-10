@@ -1,8 +1,8 @@
 <script setup>
 const tutorial = [
     { route: "/Arduino", img: require('@/assets/arduino.png'), text: "●Arduino教學", isBuild: false },
+    { route: "/Python", img: require('@/assets/python.jpg'), text: "●Python教學", isBuild: false },
     { route: "/Esp32", img: require('@/assets/esp32.png'), text: "●ESP32教學", isBuild: true },
-    { route: "/Python", img: require('@/assets/python.jpg'), text: "●Python教學", isBuild: true },
     { route: "/Forms", img: require('@/assets/TeachC.png'), text: "●電腦軟體設計教學", isBuild: true },
 ]
 </script>
@@ -14,10 +14,10 @@ const tutorial = [
 
     <div class="project">
         <div v-for="t in tutorial" :key="t.img">
-            <router-link :to="t.isBuild ? '#': t.route">
+            <router-link :to="t.isBuild ? '#' : t.route">
                 <img :src="t.img" alt="images">
                 <blockquote><strong>{{ t.text }}</strong></blockquote>
-                <p v-if = "t.isBuild"><strong>製作中...</strong></p>
+                <p v-if="t.isBuild"><strong>製作中...</strong></p>
             </router-link>
         </div>
     </div>

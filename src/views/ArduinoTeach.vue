@@ -6,7 +6,7 @@ const copyCode = (event) => {
     const codeContainer = button.parentElement.querySelector('code');
     if (!codeContainer) return;
 
-    const text = codeContainer.innerText;
+    const text = codeContainer.innerText.trim();
     navigator.clipboard.writeText(text).then(() => {
         // 顯示已複製的視覺回饋
         const originalHTML = button.innerHTML;
@@ -72,8 +72,7 @@ void loop() {
   digitalWrite(13, LOW);  // 熄滅 LED
   delay(1000);
 }
-</code>
-</pre>
+</code></pre>
 
                 </div>
             </section>
@@ -94,8 +93,7 @@ void loop() {
                                 d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
                         </svg>
                     </button>
-                    <pre class="code-scroll">
-                            <code class="language-cpp">
+                    <pre class="code-scroll"><code class="language-cpp">
 // 定義 LED 使用的 12 個腳位（用陣列管理）
 const int pins[] = { 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 };  
 
@@ -141,31 +139,28 @@ void loop() {
 
   for (int i = 0; i &lt; 12; i++) digitalWrite(pins[i], LOW);  // LED 最後都熄滅
 }
-
-                            </code>
-                        </pre>
+</code></pre>
                 </div>
                 <p><strong>● for迴圈如果需要執行一行程式碼，則不需要大括號，一行以上則需要，if也是同觀念</strong></p>
             </section>
 
             <section id="if">
-                    <h2>if判斷式</h2>
-                    <p>if判斷式用來根據條件執行不同的程式碼區塊，基本語法如下：</p>
-                    <img src="../assets/if.png" alt="">
+                <h2>if判斷式</h2>
+                <p>if判斷式用來根據條件執行不同的程式碼區塊，基本語法如下：</p>
+                <img src="../assets/if.png" alt="">
 
-                    <p><strong>● if 判斷按鈕實作： (使用<a href="https://www.tinkercad.com/" target="_blank"
-                                style="text-decoration: none;">Tinkercad</a>模擬軟體)</strong></p>
-                    <img src="../assets/ifarduino.png" alt="">
-                    <div class="code-block">
-                        <button class="copy-btn" onclick="copyCode(this)">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-copy" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
-                            </svg>
-                        </button>
-                        <pre class="code-scroll">
-<code class="language-cpp">
+                <p><strong>● if 判斷按鈕實作： (使用<a href="https://www.tinkercad.com/" target="_blank"
+                            style="text-decoration: none;">Tinkercad</a>模擬軟體)</strong></p>
+                <img src="../assets/ifarduino.png" alt="">
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-copy" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+                        </svg>
+                    </button>
+                    <pre class="code-scroll"><code class="language-cpp">
 #define Red 7     // 定義紅燈接在第 7 腳
 #define Blue 5    // 定義藍燈接在第 5 腳
 #define Green 4   // 定義綠燈接在第 4 腳
@@ -201,29 +196,27 @@ void LED_Control(int number) {
   digitalWrite(Blue, number == 2);
   digitalWrite(Green, number == 3);
 }
-</code>
-                        </pre>
-                    </div>
-                </section>
+</code></pre>
+                </div>
+            </section>
 
-                <section id="traffic-light">
-                    <h2>紅綠燈實作</h2>
-                    <p>利用紅、黃、綠三顆 LED，模擬馬路上的紅綠燈切換邏輯，<strong>紅燈亮5秒，綠燈亮3秒，黃燈亮2秒。</strong></p>
-                    <p><strong>所需材料：</strong> 紅/黃/綠 LED、220Ω 電阻 x3、麵包板。(電路接法如下圖)</p>
+            <section id="traffic-light">
+                <h2>紅綠燈實作</h2>
+                <p>利用紅、黃、綠三顆 LED，模擬馬路上的紅綠燈切換邏輯，<strong>紅燈亮5秒，綠燈亮3秒，黃燈亮2秒。</strong></p>
+                <p><strong>所需材料：</strong> 紅/黃/綠 LED、220Ω 電阻 x3、麵包板。(電路接法如下圖)</p>
 
-                    <img src="../assets/arduino rgy.png" alt="">
+                <img src="../assets/arduino rgy.png" alt="">
 
 
-                    <div class="code-block">
-                        <button class="copy-btn" onclick="copyCode(this)">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-copy" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
-                            </svg>
-                        </button>
-                        <pre class="code-scroll">
-<code class="language-cpp">
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-copy" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+                        </svg>
+                    </button>
+                    <pre class="code-scroll"><code class="language-cpp">
 #define traffic_light_Red 2     // 定義紅燈接在 Arduino 腳位 2
 #define traffic_light_Yellow 3  // 定義黃燈接在 Arduino 腳位 3
 #define traffic_light_Green 4   // 定義綠燈接在 Arduino 腳位 4
@@ -252,10 +245,9 @@ void traffic_light_Control(int number) {
 
   // 當 number 為 3 時綠燈亮，其餘時間熄滅
   digitalWrite(traffic_light_Green, number == 3);
-}</code>
-                    </pre>
-                    </div>
-                </section>
+}</code></pre>
+                </div>
+            </section>
         </main>
     </div>
 
@@ -488,18 +480,18 @@ void traffic_light_Control(int number) {
 }
 
 .copyright {
-  background-color: #747474;
-  color: #e2e2e2;
-  font-size: 14px;
-  letter-spacing: 1px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+    background-color: #747474;
+    color: #e2e2e2;
+    font-size: 14px;
+    letter-spacing: 1px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
     .news h2 {
         font-size: 40px;
     }
