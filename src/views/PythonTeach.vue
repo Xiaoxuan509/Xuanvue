@@ -129,6 +129,33 @@ for i in range(x):
 </code></pre>
 
                 </div>
+
+                <h3><strong>●列表</strong></h3><br>
+                <p>在 Python 中，我們通常使用<strong>列表</strong>來代替傳統語言（如 C++ 或 Arduino C）中的陣列</p>
+
+                <div class="code-block">
+                    <button class="copy-btn" @click="copyCode">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-copy" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+                        </svg>
+                    </button>
+<pre class="code-scroll"><code class="language-python">
+# 建立一個列表
+fruits = ["蘋果", "香蕉", "櫻桃"]
+
+# 存取元素 (從 0 開始計算)
+print(fruits[0])  # 輸出: 蘋果
+
+# 取得列表長度
+print(len(fruits)) # 輸出: 3
+
+# 加入新元素
+fruits.append("橘子")
+</code></pre>
+
+                </div>
             </section>
         </main>
     </div>
