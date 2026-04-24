@@ -2,7 +2,7 @@
 const tutorial = [
     { route: "/Arduino", img: require('@/assets/arduino.png'), text: "●Arduino教學", isBuild: false },
     { route: "/Python", img: require('@/assets/python.jpg'), text: "●Python教學", isBuild: false },
-    { route: "/Esp32", img: require('@/assets/esp32.png'), text: "●ESP32教學", isBuild: true },
+    { route: "/Esp32", img: require('@/assets/esp32.png'), text: "●ESP32教學", isBuild: false },
     { route: "/Forms", img: require('@/assets/TeachC.png'), text: "●電腦軟體設計教學", isBuild: true },
 ]
 </script>
