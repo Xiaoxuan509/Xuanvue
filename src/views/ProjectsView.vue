@@ -8,6 +8,11 @@
             <blockquote><strong>●俄羅斯方塊小遊戲</strong></blockquote>
             <p>利用Arduino UNO 搭配 OLED 來製作俄羅斯方塊遊戲，可使用藍、綠按鈕移動方塊，使用黑色按鈕控制方向和速度</p>
         </div>
+        <div>
+            <img src="../assets/PCCheck.png" alt="●電腦檢測軟體">
+            <blockquote><strong>●電腦檢測軟體</strong></blockquote>
+            <p>利用Python製作電腦檢測軟體，可以檢測CPU、記憶體狀態，以及硬碟的使用率，透過軟體去推測電腦卡頓的原因</p>
+        </div>
         <blockquote><strong>●敬請期待...</strong></blockquote>
     </section>
 
@@ -71,12 +76,9 @@
 
 .project img {
     width: 100%;
-    height: auto;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s;
-    cursor: pointer;
+    height: 300px;
+    object-fit: contain;
+    background: --shadow-color;
 }
 
 .copyright {
