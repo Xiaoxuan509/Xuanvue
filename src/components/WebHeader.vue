@@ -11,6 +11,7 @@ const navitems = [
   { name: "關於我", to: "/about" },
   { name: "作品", to: "/project" },
   { name: "教學", to: "/teach" },
+  //{ name: "攝影", to: "/photo" },
 ]
 
 // 2. 監聽路由，換頁時自動關閉選單

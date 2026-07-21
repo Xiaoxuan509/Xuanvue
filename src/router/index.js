@@ -7,6 +7,7 @@ import Arduino from '../views/ArduinoTeach.vue'
 import Esp32 from '../views/Esp32Teach.vue'
 import Python from '../views/PythonTeach.vue'
 import Forms from '../views/FormTeach.vue'
+import Photo from '../views/Photography.vue'
 
 const routes = [
   { path: '/', component: Home },
@@ -16,7 +17,8 @@ const routes = [
   { path: '/Arduino', component: Arduino },
   { path: '/Esp32', component: Esp32 },
   { path: '/Python', component: Python },
-  { path: '/Forms', component: Forms }
+  { path: '/Forms', component: Forms },
+  { path: '/Photo', component: Photo }
 ]
 
 const router = createRouter({
